@@ -4,6 +4,8 @@
 #include <iostream>
 #include<string>
 #include<vector>
+#include<stdlib.h>
+#include<initializer_list>//可变参数模板
 //#incldue<Sales_data.h>//头文件方式
 #include"Sales_data.h"//""是从文件中找，<>从系统里面找
 using std::cout;
@@ -55,15 +57,16 @@ public:
     Child_01() = default;//默认无参的构造函数
     void print_f()
     {
-        cout << "测试继承\n标题："<<title<<"\n私有成员：";//访问不了私有成员
+        cout << "测试继承\n标题："<<title<<"\n私有成员：";//访问不了基类的私有成员
     }
 };
 
-class Child_02 : Study_day01,Study_test {//继承两个类
-
+class Child_02 : Study_day01,Study_test {//继承两个类 
+    Child_02() = default;//无参构造函数
 };
 //const变量
 int Study_constexpr() {
+    system("color 3");
     cout << "测试入口" << endl;
     //constexpr变量学习，验证变量是否是一个常量表达式，
     constexpr int mf = 20;//20是一个常量表达式
@@ -96,10 +99,29 @@ int Study_constexpr() {
     //测试vector
     vector<int> vlist;//定义vector类型
     string strdemo01 = "yma16";
-    cout << strdemo01.size();
+    //cout << strdemo01.size();
     //size_type类型,string.size()返回的是一个size_type类型 的值
     string::size_type demo_n;//无符号类型
-    
+    vector<int>::iterator it;//迭代器（定义模糊）
+    for (int i = 0; i < 10; ++i)
+        vlist.push_back(i);
+    for (it = vlist.begin(); it != vlist.end(); ++it)
+    {
+        cout << *it << " ";
+    }
+    //for (auto it = vlist.begin(); it != vlist.end(); ++it)
+    //{
+    //    cout << *it << " ";
+    //}//等价auto
+    cout << endl;
+    string s = "what a summer day";
+    for (auto& temp : s)
+        temp = toupper(temp);
+    cout << s << endl;
+    for (auto& temp : s)
+        temp = tolower(temp);
+    cout << s << endl;
+    //size_type
     return 0;
 }
 //类的数据成员
@@ -108,17 +130,33 @@ int Study_constexpr() {
 //    string name = "结构体测试";
 //    string arry_s[];
 //};
+
+int test_demo(int &p)
+{
+    int a = 5;
+    p = a;
+    return 0;
+}
+
 int main(int argc,char *argv[])//main函数
 {
-    int n = 0, i = 42;
-    int& r = n;
-    cout << r << endl;
-    cout << n << endl;
-    r = i;
-    cout << r << endl;
-    cout << &n << endl;//传引用
+    int a= 1;
+    int* p = &a;
+    cout << &a << endl;
+    test_demo(a);
+    cout << &a << endl;
+    cout << a << endl;
+    system("pause");//stop
+    //int n = 0, i = 42;
+    //int& r = n;
+    //cout << r << endl;
+    //cout << n << endl;
+    //r = i;
+    //cout << r << endl;
+    //cout << &n << endl;//传引用
     //参数
     Study_constexpr();//执行函数
+    //测试第一次提交
     return 0;
 }
 
