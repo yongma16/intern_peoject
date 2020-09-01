@@ -1,6 +1,5 @@
 ﻿// Study_day01.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-
 #include <iostream>
 #include<string>
 #include<vector>
@@ -8,6 +7,7 @@
 #include<initializer_list>//可变参数模板
 //#incldue<Sales_data.h>//头文件方式
 #include"Sales_data.h"//""是从文件中找，<>从系统里面找
+Sales_data demo_data;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -124,6 +124,7 @@ int Study_constexpr() {
     //size_type
     return 0;
 }
+
 //类的数据成员
 //struct Struct_Demo
 //{
