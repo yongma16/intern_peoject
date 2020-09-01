@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include<string>
+#include<vector>
 //#incldue<Sales_data.h>//头文件方式
 #include"Sales_data.h"//""是从文件中找，<>从系统里面找
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
 using std::string;//命名空间
 //目标学习左值和右值，多继承
 class Study_day01 {
@@ -85,14 +87,27 @@ int Study_constexpr() {
         cout << s;
     }
     cout << endl;
+    //使用geiline输入，读取一整行
+    string line;
+    //while (getline(cin, line,' '))//遇到空格结束
+    //{
+    //    cout << line << endl;//不停输入读取一行，
+    //}
+    //测试vector
+    vector<int> vlist;//定义vector类型
+    string strdemo01 = "yma16";
+    cout << strdemo01.size();
+    //size_type类型,string.size()返回的是一个size_type类型 的值
+    string::size_type demo_n;//无符号类型
+    
     return 0;
 }
 //类的数据成员
-struct Struct_Demo
-{
-    string name = "结构体测试";
-    string arry_s[];
-};
+//struct Struct_Demo
+//{
+//    string name = "结构体测试";
+//    string arry_s[];
+//};
 int main(int argc,char *argv[])//main函数
 {
     int n = 0, i = 42;
