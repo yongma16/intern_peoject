@@ -42,6 +42,8 @@ void Study::outside(int x, int y)//在外部定义类中的函数
 
 int main(int argc,char *crgv)
 {
+
+
     return 0;
     //文件输入输出的ifstream类型
 }
