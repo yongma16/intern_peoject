@@ -2,6 +2,7 @@
 #include<string>
 using namespace std;
 
+
 //学习多继承和抽象数据类型，依赖接口和实现分离编程
 class Intern
 {
@@ -22,6 +23,11 @@ private:
     
 };
 
+
+void Intern::Intern_interface()//类外定义函数
+{
+    cout << "virtual function\n";
+}
 class People
 {
 public:
@@ -47,15 +53,42 @@ public:
         cout << i.company<<endl;
     }
     string name = "Human";
-    
+    Human()
+    {
+        cout << "created Human!\n";
+    }
+    ~Human()
+    {
+        cout << "destroyed human\n";
+    }
 private:
     string password = "123456789";
 };
 
+//模板函数测试，template模板
+template <typename T>
+void Swapfunction(T& a, T& b)//引用避免拷贝
+{
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+
 
 int main(int argc,char *argv)
 {
-    cout << "Hello World!\n";
+    string a = "123", b = "456";
+    int c = 2, d = 3;
+    Swapfunction(a, b);
+    Swapfunction(c, d);
+    //cout << a << endl;
+    //cout << b << endl;
+    //cout << c << endl;
+    //cout << d << endl;
+    //cout << "Hello World!\n";
     return 0;
 }
+
 
