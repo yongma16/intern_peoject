@@ -41,8 +41,10 @@ private:
 
 class Human:Intern,People{//多继承
 public:
-    void extends_People(People &p) {
-        cout <<p.name;//继承访问范围测试，只能访问公有成员数据
+    void extends_test(People &p,Intern &i) {
+        //继承访问范围测试，只能访问公有成员数据
+        cout <<p.name<<endl;
+        cout << i.company<<endl;
     }
     string name = "Human";
     
