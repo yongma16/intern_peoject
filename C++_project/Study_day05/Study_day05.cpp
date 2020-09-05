@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 #include<string>
 using namespace std;
-//学习多继承和抽象数据类型，依赖接口和实现分离编程
 
+//学习多继承和抽象数据类型，依赖接口和实现分离编程
 class Intern
 {
 public:
@@ -41,8 +41,8 @@ private:
 
 class Human:Intern,People{//多继承
 public:
-    void People::Intern_function() {
-
+    void extends_People(People &p) {
+        cout <<p.name;//继承访问范围测试，只能访问公有成员数据
     }
     string name = "Human";
     
